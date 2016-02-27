@@ -190,6 +190,7 @@ public class NavigationDrawerFragment extends Fragment {
 
     private void selectItem(int position) {
         mCurrentSelectedPosition = position;
+
         if (mDrawerListView != null) {
             mDrawerListView.setItemChecked(position, true);
         }
@@ -198,6 +199,10 @@ public class NavigationDrawerFragment extends Fragment {
         }
         if (mCallbacks != null) {
             mCallbacks.onNavigationDrawerItemSelected(position);
+        }
+
+        if (mCurrentSelectedPosition == 1){
+            Toast.makeText(getActivity(), "click", Toast.LENGTH_SHORT).show();
         }
     }
 
